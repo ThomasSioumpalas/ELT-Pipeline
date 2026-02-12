@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig # type: ignore
 from cosmos.profiles import SnowflakeUserPasswordProfileMapping
 
 
