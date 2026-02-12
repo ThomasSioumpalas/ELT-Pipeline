@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: tpch
+    database: snowflake_sample_data #this comes from snowflake sample data databases
+    schema: tpch_sf1 #schema of the test db
+    tables:
+      - name: orders
+        columns:
+          - name: o_orderkey
+            tests:
+              - unique
+              - not_null #generic test
+      - name: lineitem
+        columns:
+          - name: l_orderkey #this is the foreign key to orders.o_orderkey table above
+            tests:
+              - relationships:
+                  arguments:
+                    to: ref('stg_tpch_orders')
+                    field: order_key
