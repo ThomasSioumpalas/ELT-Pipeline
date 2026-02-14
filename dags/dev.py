@@ -3,7 +3,7 @@ from pendulum import datetime # type: ignore
 
 
 @dag(
-    dag_id="dev",
+    dag_id="dbt_dag",
     start_date=datetime(2025, 1, 1),
     schedule=None,
     catchup=False,
