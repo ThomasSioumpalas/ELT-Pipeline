@@ -1,4 +1,9 @@
 FROM quay.io/astronomer/astro-runtime:12.6.0
 
+# Create the dbt virtual environment
 RUN python -m venv dbt_venv && \
-    ./dbt_venv/bin/pip install --no-cache-dir dbt-snowflake
+    source dbt_venv/bin/activate && \
+    pip install --no-cache-dir dbt-snowflake && deactivate
+
+# Optional: Set an environment variable to make referencing the venv easier in DAGs
+ENV DBT_VENV_PATH=/usr/local/airflow/dbt_venv
