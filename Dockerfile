@@ -5,5 +5,5 @@ RUN python -m venv dbt_venv && \
     source dbt_venv/bin/activate && \
     pip install --no-cache-dir dbt-snowflake && deactivate
 
-# Optional: Set an environment variable to make referencing the venv easier in DAGs
+# Set an environment variable to make referencing the venv easier in DAGs
 ENV DBT_VENV_PATH=/usr/local/airflow/dbt_venv

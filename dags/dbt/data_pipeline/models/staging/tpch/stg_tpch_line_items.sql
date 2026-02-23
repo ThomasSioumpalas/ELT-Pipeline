@@ -1,7 +1,8 @@
 select
+    --  surrogate key is usefull for dimensional modeling when you have fact tables and dimensional tables that you wanna connect
+
     {{
-        dbt_utils.generate_surrogate_key([ --surrogate key is usefull for dimensional modeling when you have fact tables and dimensional tables that you wanna connect
-        
+        dbt_utils.generate_surrogate_key([ 
             'l_orderkey',
             'l_linenumber'
         ])

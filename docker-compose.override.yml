@@ -1,0 +1,7 @@
+﻿services:
+  scheduler:
+    environment:
+      AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: "120"
+  webserver:
+    environment:
+      AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: "120"
